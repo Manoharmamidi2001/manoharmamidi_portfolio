@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <title>manohar mamidi</title>
+    <style>
+        .content {
+            min-height: 100vh;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            display: flex;
+            padding-top: 80px;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top:80px;
+        }
+
+        .card {
+            height: 40vh;
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            text-align: center;
+        }
+
+        .btn-custom {
+            background-color: #1e3c72;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .btn-custom:hover {
+            background-color: #2a5298;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <navs style="height: 9vh; background-color: rgb(255, 255, 255);" class="navbar fixed-top navbar-expand-sm absolute justify-content-between align-items-cente">
+            <div class="container-fluid">
+                <a class="nav-link" href="./index.html">
+                    <h3>Portfolio</h3>
+                </a>
+                <button style="position: relative; top: 0.5; right: 0.5rem; align-items: center;" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h1 class="offcanvas-title" id="offcanvasNavbarLabel">MENU</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 column-gap-4">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./skills.html">Technical Skills</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./resume.html">Resume</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./projects.html">Projects</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </navs>
+    </div>
+    <div class="content">
+        <h1>My Works</h1>
+        <div class="card-container">
+            <!-- Card 1: HTML, CSS & Bootstrap -->
+            <div class="card">
+                <img src="./logo (2).png" alt="HTML, CSS, Bootstrap">
+                <div class="card-body">
+                    <h5 class="card-title">HTML, CSS & Bootstrap</h5>
+                    <p class="card-text">A travels website builted with a responsive ui designs</p>
+                    <a target="_blank" href="https://manoharmamidi2001.github.io/IPSUM_TRAVELS/" class="btn btn-custom">Visit site</a>
+                </div>
+            </div>
+
+            <!-- Card 2: JavaScript -->
+            <div class="card">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAAe1BMVEXw208yMzDz4nHw2kn031AwMTAjJi8uLzC3qETn1E5yazn65FEqLC/34VAmKS84ODGomkIAACwdIi5nYTfgzUwZHy4SGi0AEC2fk0BBQDLOvUnWxEqGfTxRTjSxo0N6cjoABiyUiT5IRjPFtUdbVzYJFC2+r0aNgz2BeDzoZC5pAAAIKUlEQVR4nO2ca5OquhKGw9kJ4RICykUuggqI/v9feMBx7VGSADq67NmVt2p9WFWQyUPn0t3piNB/Rv/879M9eKE0DFRpGKjSMFClYaBKw0CVhoEqDQNVGgaqNAxUaRio0jBQpWGgSsNAlYaBKg0DVRoGqjQMVGkYqNIwUKVhoErDQJWGgSoNA1UaBqo0DFRpGKjSMFClYaBKw0CVhoEqDQNVGgaqNAxUaRio0jBQpWGgSsNAlYaBKg0DVRoGqjQMVGmY9wtj70tu/w8vfeu9MNgV5M2/5Lk4yrsqSHsFldUUtusuAnorDC4CQdbMO55rd4dd2Na+QRmjhp+VrbMNcrSA570wluGPxBx76g0XN9s2oyZnlBJiGAYhlHHTNOowjWZx3gzD+i7dyZyCwV4X+oM5BPVIJNvO4bwZhpJRr6Zg3CJcs/ELNzwmOeDJKQcHBuPDxlSRXHmOWT5lGzAw2G430yiD+L6aWKmhwODCj+dZeq1SpKQBAoObjC9iMYzkpKSBAePl5VIWg7CDraABAYOLcDGLYVBDNdIgwGD7pF6RJWKZBRjG8iX75IR4W0j3GwAwOApn9hdB65N02gCAQdWyRflGZN3BhMFRq5j9gy+noInLSELzeRjUHWXdpbx3/y9hgAhEWSmNJADAnNcSFFaHp8CyqoNTGvy+EcJ7/xnoAmAb4lJGjV2DrqFpFIR3QQFjoQV1n8H5SmTxU/vfT4/d6EC+aeL6ELmKv/dxGC8VpwxP8e2nxyj4M9JY4jQYrqPpOcImw9rRMMI4+CKOs0A+W770cRgsupiJNR5H2DsnPWS8y9X+P4IAI87/jdhhbGc89qtJFAAwKB4/Qn3JBMfdypHtk3f6PEwiTJlaulrl84kzgDBSy6CZEXbR52GEYWYkqn1kTh+HwVRcAOTRyrw+D1OzMcz6/KRpPg7jieE/MfLnaD4PsxVDM9YWT9F8HAZXknCGhQsWYlEfh0HFXoTp95oAPb4KfB7GlqZmKO+N8yjO52HQSZ7P4JuweHCsAYBpBB/gz7OrMF+08//R52GwrU6bmZu2ipA6Ghvp8zAIVRM5QJ7UaW4vxAEAg6PJtDmLs20XLSoGAADTm0aSoLkRjX2nWoIDAQbb57nDzLUB4Oh86fmMKkP7bR1utKk94+SAgEFe5wu+s2CdHqf6FUfnXmXOH9EQxsJJDxQIDHKr9ZLDM745TcwcKDDI7fiic81NWSh3HTAwyG1KvuQ0kFNl+gwODHKjnb/EOFR5dg4IZkiQt3x2VRtotvJ8ICSY3qPMT/6ChYDyM9gD2ts37G5nzp89U36SNQMMpjeO3YX7WRzKU5gHtOOXsN2Ee8k554hGUnkGD2bAQcUuSabnDs9EzwYiDLocZJ5IPFlRczwIng1QmAEHBSWRFZ9eRWJhRQMLg4a64C7MmHLjWQumgQzT43jNuVTh0Gz8OGyYPjbo99FSER7QbrQGQIfpcVDvFkg3HjY++oAP0+P0G48sUcjK0YO/AabfeKKdhIbWxf169itgLgkckYZk1v2k+SUwQ0G6MG+Ikd5Pmt8CI82v0y1UmJl8siyJy3cwhxlGdqcqJL8qFUzDnXfAKHqBK74QBqN8twomM3y4ksDcP/IKGOxFaSVLzuFKCEvMnYS8d/kP/ppm+RQNtv4GjIcs51hKx0gqnPCZZ7GXXhRcPBY2Xbf0FyyDvXzbexv0IH5VbG8Fy/Dt+DkPVSG5zG1C1bdJkHTO7F67aXp2esndsboRaGQLEBv57dhtdr55nVnq+xfy00K2feUCMFzfI18eOtuJA60RinyIH9zBuPY2u8ljMiNQrdC4EaxMyOGF+4xrn+mf0Jaw8VfF6CT8fZrduu2eV9X3sSSlqZwG22It5/jL/AQGu4Fpkpt+VPf98HIxn8fKb98Qu3m7HpuOJjtZaQb2QrFagNbNi+YMxkW5v+ssWwc3tuk9XUnmmIU3TcivMsZmh0fWwdiuJZUPfQjwIpjoFI/7So7nwu7/8iBkN0ySBWc33hSu5HeAyKrtbHRt58IVpbEMm+1eE5zhvJTltWJ66opBTRVuZLd6/e7m79tnRdKfH7OtlRfRoCK3zkRaw0FI9yqYVppmIHHs12Xtm4m0n6y8dWa8vFSlXlic8KwNnbCtWSJMrC/RetyrZ4cZTlUXdSiTXrW+iN/77DgVHNGb70K5aZpc/cTrUk3q+0hTYvfeF7adJxq5ijLBZX16AfBmyipkMp3Rt8RR/TTNJn1heharpq9ae6HG18tn8uNKcWHG/AgGZQuO7G51lJT4es3qKRqSSOKFH3gAXrR/aKAxIv0mnWwNn9U+kLT1E9/MbZIHbENj+Q8TuB190MLDDnCQudc/czQtunjeUF4p/eHyoavNX0earz+g9axMiPLlYhOhilc45BHjMEPO8tPgDDftsrKKbOIHFoYIrzaXGoeYdfCmq424OBuzQ42Y5fQNK4ybs7GoEsjgpvo+4M9zAHbVrqcHicnP+VzJqGdbDp/H4UlZqe8D/jw7g1GRZkc1jnkMrZn03lc7Ubejk8sjWSdloK5pelHeDEVBvYll/WBJMqAsquTtQ7A8LRO5v21Q82g6VvQXrjb2sVh+ylab+Hs1IMxM9psyLZbXWA9P2kXaHlfHmH+v1n1L8WbFnSqaKz9/Va55CAkj6xT6yX41aG/WTtrYy3+b7N+GPA/l1TbMzM2lodVmnYWnfqIsuOXwysQ59oZb4siOIvvryvgTV2Au8q5vX1q6/GfZR3nDKcA1cH9RS488D/Rn9J6ThoEqDQNVGgaq/mMw/wfV1oaD4tM++QAAAABJRU5ErkJggg==" alt="JavaScript Works">
+                <div class="card-body">
+                    <h5 class="card-title">JavaScript Works</h5>
+                    <p class="card-text">Dynamic and interactive web projects using JavaScript.</p>
+                    <a target="_blank" href="https://manoharmamidi2001.github.io/javaScriptWorks/" class="btn btn-custom">View Works</a>
+                </div>
+            </div>
+
+            <!-- Card 3: ReactJS -->
+            <div class="card">
+                <img src="data:image/png;base64,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" alt="ReactJS Works">
+                <div class="card-body">
+                    <h5 class="card-title">ReactJS Works</h5>
+                    <p class="card-text">A real time quiz application developed with Reactjs library</p>
+                    <a target="_blank" href="https://manoharmamidi2001.github.io/quiz/" class="btn btn-custom">Visit Website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
