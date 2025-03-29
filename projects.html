@@ -13,12 +13,11 @@
         }
         .content {
             min-height: 100vh;
-            background: black;
-            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top:70px;
+            background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%);
         }
         .card-container {
             display: flex;
@@ -63,15 +62,49 @@
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+        .navigate {
+            color: #222;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+        }
+        
+        .navigate:focus,
+        .navigate:hover {
+            color: #222;
+        }
+        
+        .navigate:focus:after,
+        .navigate:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+        
+        .navigate:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
+        }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
-                <h3>Portfolio</h3>
+                <h3 class="navigate">Portfolio</h3>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -83,10 +116,11 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./skills.html">Technical Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>

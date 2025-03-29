@@ -4,12 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Manohar Mamidi</title>
     <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
         .content{
             height: 100vh;
+        }
+        .navigate {
+            color: #222;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+        }
+        
+        .navigate:focus,
+        .navigate:hover {
+            color: #222;
+        }
+        
+        .navigate:focus:after,
+        .navigate:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+        
+        .navigate:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
         }
     </style>
 </head>
@@ -18,7 +56,7 @@
         <nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="./index.html">
-                    <h3>Portfolio</h3>
+                    <h3 class="navigate">Portfolio</h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                     <span class="navbar-toggler-icon"></span>
@@ -30,18 +68,29 @@
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./skills.html">Technical Skills</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
-    <div class="content">
-        <iframe src="./JobMelaResume.pdf" width="100%" height="100%" style="border: none;"></iframe>
+    <div class="content d-flex flex-column">
+        <!-- Download Button -->
+        <div class="text-center p-3">
+            <a href="./Manohar_Mamidi.pdf" download="Manohar Mamidi" class="btn btn-dark">
+                Download Resume
+            </a>
+        </div>
+    
+        <!-- Resume Preview -->
+        <div class="flex-grow-1">
+            <iframe src="./Manohar_Mamidi.pdf" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
     </div>
 </body>
 </html>

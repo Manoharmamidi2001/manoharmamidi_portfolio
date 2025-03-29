@@ -17,7 +17,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 50px;
+            background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%);
         }
         .profile-image {
             animation: float 2.5s ease-in-out infinite;
@@ -33,8 +33,8 @@
         .name-heading {
             font-size: 80px;
             font-weight: bold;
-            text-decoration: underline;
             margin-top: 20px;
+            color: rgb(0, 0, 0);
         }
         /* Media Query for Mobile View */
         @media (max-width: 768px) {
@@ -43,14 +43,66 @@
                 text-align: center;
             }
         }
+                /* From Uiverse.io by JaydipPrajapati1910 */ 
+        .navigate {
+            color: #222;
+            cursor: pointer;
+            position: relative;
+            border: none;
+            background: none;
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: color;
+        }
+        
+        .navigate:focus,
+        .navigate:hover {
+            color: #222;
+        }
+        
+        .navigate:focus:after,
+        .navigate:hover:after {
+            width: 100%;
+            left: 0%;
+        }
+        
+        .navigate:after {
+            content: "";
+            pointer-events: none;
+            bottom: -2px;
+            left: 50%;
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background-color: rgb(0, 0, 0);
+            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition-duration: 400ms;
+            transition-property: width, left;
+        }
+        .name-heading, .animated-text, .social-icons a {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    
+        .name-heading { animation-delay: 0s; }
+        .animated-text { animation-delay: 0.5s; }
+        .social-icons a:nth-child(1) { animation-delay: 1s; }
+        .social-icons a:nth-child(2) { animation-delay: 1.2s; }
+        .social-icons a:nth-child(3) { animation-delay: 1.4s; }
+        .social-icons a:nth-child(4) { animation-delay: 1.6s; }
+    
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-
     <nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
-                <h3>Portfolio</h3>
+                <h3 class="navigate">Portfolio</h3>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -62,10 +114,11 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./skills.html">Technical Skills</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="./projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
+                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,16 +128,16 @@
     <div class="content">
         <div class="d-flex flex-column align-items-center">
             <img src="./pic.jpg" class="img-fluid profile-image" alt="profile"
-                style="height: 35vh; border-radius: 100%; box-shadow: 0px 0px 40px rgb(0, 0, 0);">
+                style="height: 35vh; border-radius: 100%; box-shadow: 0px 0px 100px rgb(255, 255, 255);">
             
             <h1 class="name-heading">Manohar Mamidi</h1>
             
-            <p class="text-center">
+            <p class="animated-text text-center" style="color: rgb(0, 0, 0);">
                 <strong>Passionate Web Developer</strong> | <strong>Front End Developer</strong> |
                 <strong>UI/UX Developer</strong> | <strong>UI/UX Designer</strong>
             </p>
 
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center social-icons">
                 <a href="https://www.linkedin.com/in/manoharmamidi2110/" target="_blank" class="m-3 text-dark">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                         class="bi bi-linkedin" viewBox="0 0 16 16">
