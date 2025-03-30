@@ -11,6 +11,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
         .content{
             height: 100vh;
@@ -49,6 +51,14 @@
             transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
             transition-duration: 400ms;
             transition-property: width, left;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>

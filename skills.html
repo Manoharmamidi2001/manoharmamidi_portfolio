@@ -12,6 +12,8 @@
         body {
             font-family: 'Poppins', sans-serif;
             background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%);
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
         }
         .content{
             margin-top: 100px;
@@ -50,6 +52,14 @@
             transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
             transition-duration: 400ms;
             transition-property: width, left;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
