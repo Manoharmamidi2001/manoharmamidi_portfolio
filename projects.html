@@ -1,185 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="./favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Manohar Mamidi</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
-        .content {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top:70px;
-            background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%);
-        }
-        .card-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .card {
-            height: 50vh;
-            width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-            background-color: #fff;
-            color: #000;
-        }
-        .card:hover {
-            transform: scale(1.05);
-        }
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        .card-body {
-            text-align: center;
-        }
-        .btn-custom {
-            background-color: #1e3c72;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-        .btn-custom:hover {
-            background-color: #2a5298;
-        }
-        .navbar {
-            background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .navigate {
-            color: #222;
-            cursor: pointer;
-            position: relative;
-            border: none;
-            background: none;
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: color;
-        }
-        
-        .navigate:focus,
-        .navigate:hover {
-            color: #222;
-        }
-        
-        .navigate:focus:after,
-        .navigate:hover:after {
-            width: 100%;
-            left: 0%;
-        }
-        
-        .navigate:after {
-            content: "";
-            pointer-events: none;
-            bottom: -2px;
-            left: 50%;
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            background-color: rgb(0, 0, 0);
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: width, left;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="./favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Manohar Mamidi</title>
+  <style>
+    body {
+        font-family: 'Poppins', sans-serif;
+        opacity: 0;
+        animation: fadeIn 1.5s ease-in-out forwards;
+        background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%);
+
+    }
+    .content {
+      margin-top: 80px;
+    }
+    .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .navigate {
+      color: #222;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      background: none;
+      transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    .navigate:hover,
+    .navigate:focus {
+      color: #222;
+    }
+    .navigate:after {
+      content: "";
+      pointer-events: none;
+      bottom: -2px;
+      left: 50%;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: rgb(0, 0, 0);
+      transition: width 400ms, left 400ms;
+    }
+    .navigate:hover:after,
+    .navigate:focus:after {
+      width: 100%;
+      left: 0%;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand navigate" href="./index.html"><img class="img-fluid" src="./icon.png" alt="icon" style="height:7vh; background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%); border-radius: 10px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title">MENU</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
-                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
-                        <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Navbar -->
+  <!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand navigate" href="./index.html">
+        <img class="img-fluid" src="./icon.png" alt="icon" style="height:7vh; background: linear-gradient(43deg, rgb(244, 92, 92) 20%, rgb(238, 232, 50) 52%, rgb(255, 220, 205) 80%); border-radius: 10px">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">MENU</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
-    </nav>
-
-    <!-- Content -->
-    <div class="content">
-        <div class="card-container">
-            <!-- Card 1: HTML, CSS & Bootstrap -->
-            <div class="card">
-                <img src="data:image/jpeg;base64,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" alt="HTML, CSS, Bootstrap">
-                <div class="card-body">
-                    <h5 class="card-title">HTML, CSS & Bootstrap</h5>
-                    <p class="card-text">A travels website built with a responsive UI design.</p>
-                    <a target="_blank" href="https://manoharmamidi2001.github.io/IPSUM_TRAVELS/" class="btn btn-custom">Visit site</a>
-                </div>
-            </div>
-
-            <!-- Card 2: JavaScript Works -->
-            <div class="card">
-                <img src="data:image/png;base64,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" alt="JavaScript Works">
-                <div class="card-body">
-                    <h5 class="card-title">JavaScript Works</h5>
-                    <p class="card-text">Dynamic and interactive web projects using JavaScript.</p>
-                    <a target="_blank" href="https://manoharmamidi2001.github.io/javaScriptWorks/" class="btn btn-custom">View Works</a>
-                </div>
-            </div>
-
-            <!-- Card 3: ReactJS -->
-            <div class="card">
-                <img src="data:image/png;base64,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" alt="ReactJS Projects">
-                <div class="card-body">
-                    <h5 class="card-title">ReactJS Projects</h5>
-                    <p class="card-text">Modern and scalable web apps built with React.</p>
-                    <a target="_blank" href="./reactJs.html" class="btn btn-custom">View Projects</a>
-                </div>
-            </div>
-
-            <!-- Card 4: Wordpress -->
-            <div class="card">
-                <img src="./wordpress.jpeg" alt="ReactJS Works">
-                <div class="card-body">
-                    <h5 class="card-title">Wordpress Works</h5>
-                    <p class="card-text">A travels website builted with a responsive ui designs</p>
-                    <a target="_blank" href="https://dev-letwetravel.pantheonsite.io/" class="btn btn-custom">Visit Website</a>
-                </div>
-            </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
+            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
+            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
+          </ul>
         </div>
+      </div>
     </div>
+  </nav>
+  
 
+  <!-- Content -->
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row g-4">
+        <!-- Card Template Start -->
+        <!-- Repeat this block for each card, changing content accordingly -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100">
+            <img src="./ipsmTravels.jpg" class="img-fluid card-img-top" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">IPSUM Travels</h5>
+              <p class="card-text">A static travel website built using HTML, CSS, and Bootstrap, designed to showcase popular destinations and travel packages.</p>
+              <p><strong>Technologies:</strong> HTML, CSS, Bootstrap.</p>
+              <a target="_blank" href="https://manoharmamidi2001.github.io/IPSUM_TRAVELS/" class="btn btn-primary mt-auto">Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./bank.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Bank</h5>
+                <p class="card-text">A dynamic banking application developed using HTML, CSS, Bootstrap, and JavaScript for interactive features.</p>
+                <p><span style="font-weight: bold;">Technologies:</span> HTML, CSS, Bootstrap, JavaScript.</p>
+                <a target="_blank" href="https://manoharmamidi2001.github.io/bank/" class="btn btn-primary">Visit</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./dice.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Dice Game</h5>
+                <p class="card-text">An interactive Dice Game developed using HTML, CSS, Bootstrap, and JavaScript for engaging gameplay.</p>
+                <p><span style="font-weight: bold;">Technologies:</span> HTML, CSS, Bootstrap, JavaScript.</p>
+                <a target="_blank" href="https://manoharmamidi2001.github.io/dice_game/" class="btn btn-primary">Visit</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./drum.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Drum Band</h5>
+                <p class="card-text">A fun and responsive Drum Band web app built using HTML, CSS, Bootstrap, and JavaScript.
+                    Users can play various drum sounds using keyboard keys or by clicking on drum buttons.</p>                
+                    <p><span style="font-weight: bold;">Technologies:</span> HTML, CSS, Bootstrap, JavaScript.</p>
+                    <a target="_blank" href="https://manoharmamidi2001.github.io/drumband/" class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./ecommerce.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">E-Commerce</h5>
+                <p class="card-text">A responsive E-Commerce website built using HTML, CSS, Bootstrap, and JavaScript.
+                    It features product listings, shopping cart functionality, and a smooth user interface.</p>                
+                    <p><span style="font-weight: bold;">Technologies:</span> HTML, CSS, Bootstrap, JavaScript.</p>
+                    <a target="_blank" href="https://manoharmamidi2001.github.io/todo/" class="btn btn-primary">Visit</a>
+                </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./ecommerceApi.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Data Fetching</h5>
+                <p class="card-text">A responsive web application that fetches and displays real-time data from external APIs using JavaScript.</p>
+                <p><span style="font-weight: bold;">Technologies:</span> HTML, CSS, Bootstrap, JavaScript.</p>
+                <a target="_blank" href="https://manoharmamidi2001.github.io/datafetching/" class="btn btn-primary">Visit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./wordpress.jpeg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Travell</h5>
+                <p class="card-text">A dynamic and responsive travel website developed using WordPress.</p>
+                <p><span style="font-weight: bold;">Technologies:</span> Wordpress</p>
+                <a target="_blank" href="https://dev-letwetravel.pantheonsite.io/" class="btn btn-primary">Visit</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100">
+              <img src="./quiz.jpg" class="img-fluid card-img-top" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Quiz</h5>
+                <p class="card-text">A dynamic quiz application built with ReactJS for interactive learning and assessments.</p>
+                <p><span style="font-weight: bold;">Technologies:</span> ReactJs, Antd, Bootstrap</p>
+                <a target="_blank" href="https://manoharmamidi2001.github.io/quiz/" class="btn btn-primary">Visit</a>
+              </div>
+            </div>
+          </div>
+
+        <!-- Repeat for all other cards... just paste your other card blocks here -->
+        <!-- Start pasting each card below this line -->
+
+        <!-- CARD -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100">
+            <img src="./weather.jpg" class="img-fluid card-img-top" />
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Weather Application</h5>
+                <p class="card-text">A responsive Weather App developed using ReactJS and external weather APIs. Fetches real-time weather data based on city input and displays temperature, humidity, and conditions.</p>              
+                <p><span style="font-weight: bold;">Technologies:</span> Reactjs, Antd, Bootstrap.</p>
+                <a target="_blank" href="https://manoharmamidi2001.github.io/weather/" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100">
+            <img src="./reactTodo.jpg" class="img-fluid card-img-top" />
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Todo Application</h5>
+                <p class="card-text">A responsive ToDo application built using ReactJS for daily task management</p>
+                <p><span style="font-weight: bold;">Technologies:</span> ReactJS, Antd, Bootstrap.</p>
+                <a target="_blank" href="https://todo-application-seven-xi.vercel.app/" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- (Paste the remaining card blocks here in the same pattern) -->
+
+        <!-- ... -->
+
+      </div>
+    </div>
+  </div>
 </body>
 </html>
