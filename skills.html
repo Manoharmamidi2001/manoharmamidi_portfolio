@@ -116,7 +116,21 @@
     .skill-button:nth-child(14) { animation-delay: 1.4s; }
     .skill-button:nth-child(15) { animation-delay: 1.5s; }
 
-        
+    .cert-img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        animation: fallDown 0.8s ease-out forwards;
+        opacity: 0;
+    }    
+    
+    .cert-img:hover {
+        transform: scale(1.05);
+        border-color: #000;
+    }
     </style>
 </head>
 <body>
@@ -135,8 +149,8 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
                             <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
                             <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
                             <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
                         </ul>
@@ -149,8 +163,8 @@
         <div class="container">
             <div class="row">
                 <!-- Development Skills -->
-                <div class="col-12 col-md-6 mb-6">
-                    <h4 class="text-center mb-4">Development</h4>
+                <div class="col-12 col-md-6 mt-1">
+                    <h4 class="text-center">Development</h4>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
@@ -235,8 +249,8 @@
                 </div>
         
                 <!-- Designing Skills -->
-                <div class="col-12 col-md-6 mb-6">
-                    <h4 class="text-center mb-4">Designing</h4>
+                <div class="col-12 col-md-6 mt-1">
+                    <h4 class="text-center">Designing</h4>
                     <div class="row justify-content-center">
                         <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
@@ -258,29 +272,27 @@
                         </div>
                         <!-- Add more design skills similarly -->
                     </div>
-                </div>
-                <div class="col-12 mt-5">
-                    <h4 class="text-center mb-4">Tools</h4>
+                    <h4 class="text-center mt-4">Tools</h4>
                     <div class="row justify-content-center">
-                        <div class="col-6 col-sm-6 col-lg-3 d-flex justify-content-center">
+                        <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
                                 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-icon" style="filter: grayscale(100%) brightness(0%)">
                                 <span style="color: black;">VS Code</span>
                             </button>
                         </div>
-                        <div class="col-6 col-sm-6 col-lg-3 d-flex justify-content-center">
+                        <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
                                 <img src="./git.png" alt="Git" class="skill-icon">
                                 <span style="color: black;">Git</span>
                             </button>
                         </div>
-                        <div class="col-6 col-sm-6 col-lg-3 d-flex justify-content-center">
+                        <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
                                 <img src="./github.png" alt="GitHub" class="skill-icon">
                                 <span style="color: black;">GitHub</span>
                             </button>
                         </div>
-                        <div class="col-6 col-sm-6 col-lg-3 d-flex justify-content-center">
+                        <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
                             <button class="skill-button">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
                                 alt="Postman"
@@ -289,13 +301,51 @@
                                 <span style="color: black;">Postman</span>
                             </button>
                         </div>
-                        
+                        <div class="col-6 col-sm-6 col-lg-4 d-flex justify-content-center">
+                            <button class="skill-button">
+                                <img src="./chatgpt.png" alt="GitHub" class="skill-icon">
+                                <span style="color: black;">ChatGPT</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        
+        <div class="container mt-5">
+            <h4 class="text-center mb-4">Certifications</h4>
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
+                    <img src="./Front_End_SimpleLearn.jpg" class="cert-img" alt="Certificate 1" onclick="openModal(this.src)">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
+                    <img src="./udemy_css&js.jpeg" class="cert-img" alt="Certificate 2" onclick="openModal(this.src)">
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 d-flex justify-content-center mb-4">
+                    <img src="./udemy_html&css.jpg" class="cert-img" alt="Certificate 3" onclick="openModal(this.src)">
+                </div>
+            </div>
+        </div>        
+        <!-- Modal -->
+        <div class="modal fade" id="certModal" tabindex="-1" aria-labelledby="certModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="certModalLabel">Certificate Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <img id="certImage" src="" alt="Certificate" style="width: 100%; height: auto; object-fit: contain; max-height: 80vh;">
+            </div>
+            </div>
+          </div>
+        </div>
+        <script>
+            function openModal(src) {
+                document.getElementById("certImage").src = src;
+                const myModal = new bootstrap.Modal(document.getElementById('certModal'));
+                myModal.show();
+            }                
+        </script>
     </div>
 </body>
 </html>
