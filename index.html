@@ -36,8 +36,11 @@
             font-size: 80px;
             font-weight: bold;
             margin-top: 20px;
+            margin-bottom: 10px; /* Decrease margin between heading and underline */
             color: rgb(0, 0, 0);
+            position: relative;
         }
+        
         /* Media Query for Mobile View */
         @media (max-width: 768px) {
             .name-heading {
@@ -106,6 +109,28 @@
                 opacity: 1;
             }
         }
+        .name-heading::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -5px; /* Adjust position of underline closer */
+            transform: translateX(-50%);
+            width: 0%;
+            height: 4px;
+            background-color: black;
+            animation: underlineExpand 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes underlineExpand {
+            from{
+                width: 0%;
+            }
+            to {
+                width:100%;
+            }
+        }
+        
     </style>
 </head>
 <body>
