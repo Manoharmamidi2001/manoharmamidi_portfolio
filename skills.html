@@ -19,39 +19,26 @@
             margin-top: 100px;
         }
         .navigate {
-            color: #222;
-            cursor: pointer;
-            position: relative;
-            border: none;
-            background: none;
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: color;
+        text-decoration: none;
+        border: none;
+        background: none;
         }
-        
-        .navigate:focus,
-        .navigate:hover {
-            color: #222;
+
+        .navigate::before {
+        margin-left: auto;
         }
-        
-        .navigate:focus:after,
-        .navigate:hover:after {
-            width: 100%;
-            left: 0%;
+
+        .navigate::after, .navigate::before {
+        content: '';
+        width: 0%;
+        height: 2px;
+        background: #000000;
+        display: block;
+        transition: 0.5s;
         }
-        
-        .navigate:after {
-            content: "";
-            pointer-events: none;
-            bottom: -2px;
-            left: 50%;
-            position: absolute;
-            width: 0%;
-            height: 2px;
-            background-color: rgb(0, 0, 0);
-            transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-            transition-duration: 400ms;
-            transition-property: width, left;
+
+        .navigate:hover::after, .navigate:hover::before {
+        width: 100%;
         }
         @keyframes fadeIn {
             from {

@@ -36,32 +36,26 @@
     }
     
     .navigate {
-      color: #222;
-      cursor: pointer;
-      position: relative;
+      text-decoration: none;
       border: none;
       background: none;
-      transition: color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
     }
-    .navigate:hover,
-    .navigate:focus {
-      color: #222;
+
+    .navigate::before {
+      margin-left: auto;
     }
-    .navigate:after {
-      content: "";
-      pointer-events: none;
-      bottom: -2px;
-      left: 50%;
-      position: absolute;
+
+    .navigate::after, .navigate::before {
+      content: '';
       width: 0%;
       height: 2px;
-      background-color: rgb(0, 0, 0);
-      transition: width 400ms, left 400ms;
+      background: #000000;
+      display: block;
+      transition: 0.5s;
     }
-    .navigate:hover:after,
-    .navigate:focus:after {
+
+    .navigate:hover::after, .navigate:hover::before {
       width: 100%;
-      left: 0%;
     }
     @keyframes fadeIn {
       from { opacity: 0; }
