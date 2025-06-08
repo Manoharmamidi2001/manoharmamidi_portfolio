@@ -354,6 +354,34 @@
 #mainContent {
     display: none;
 }
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+.social-icons a:hover {
+    background-color: #000000;
+    color: white !important;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Specific adjustments for the icons */
+.social-icons a svg {
+    transition: all 0.3s ease-in-out;
+}
+
+.social-icons a:hover svg {
+    transform: scale(1.2);
+}
         
     </style>
 </head>
@@ -404,7 +432,7 @@
     <div class="content">
         <div class="d-flex flex-column align-items-center">
             <img src="./profile1.JPG" class="img-fluid profile-image" alt="profile"
-                style="height: 35vh; border-radius: 100%; box-shadow: 0px 0px 100px rgb(255, 255, 255); margin-top: 45px;box-shadow: 0px 0px 50px rgba(0, 0, 0, 10);">
+                style="height: 35vh; border-radius: 100%; margin-top: 45px;">
             
             <h1 class="name-heading">Manohar Mamidi</h1>
             
