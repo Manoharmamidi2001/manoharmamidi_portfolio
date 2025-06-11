@@ -21,7 +21,22 @@
             margin-top: 10rem;
         }
         .profile-image {
-            animation: float 2.5s ease-in-out infinite;
+            /* Initial position off-screen */
+            position: relative;
+            top: -500px;
+            /* Animation will be applied via JS */
+        }
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
         }
         @keyframes float {
             0%, 100% {
@@ -477,7 +492,7 @@
 
     <div class="content">
         <div class="d-flex flex-column align-items-center">
-            <img src="./pic.jpg" class="img-fluid profile-image" alt="profile"
+            <img src="./pic.jpg" class="img-fluid profile-image" alt="profile" id="profileImage"
                 style="height: 35vh; border-radius: 100%;">
             
             <h1 class="name-heading">Manohar Mamidi</h1>
@@ -534,9 +549,47 @@
                 
                 // Trigger content animations
                 document.body.style.opacity = "1";
+                
+                // Animate the profile image falling and bouncing
+                animateProfileImage();
             }, 500); // Match this with the loader's transition duration
         }, 3000); // 3 seconds loading time
     });
+    
+    function animateProfileImage() {
+        const profileImage = document.getElementById("profileImage");
+        
+        // First, animate the fall
+        profileImage.style.animation = "none"; // Reset any existing animation
+        profileImage.offsetHeight; // Trigger reflow
+        
+        // Randomly decide if we should do the falling animation (about 70% chance)
+        const shouldFall = Math.random() < 0.7;
+        
+        if (shouldFall) {
+            // Set initial position (already set in CSS)
+            
+            // Animate falling down
+            profileImage.style.transition = "top 0.9s cubic-bezier(0.33, 1, 0.68, 1)";
+            profileImage.style.top = "0";
+            
+            // After falling, add bounce effect
+            setTimeout(() => {
+                profileImage.style.transition = "transform 0.4s ease-out";
+                <!-- profileImage.style.animation = "bounce 0.9s"; -->
+                
+                // After bounce, start the floating animation
+                setTimeout(() => {
+                    profileImage.style.animation = "float 2s ease-in-out infinite";
+                }, 800);
+            }, 800);
+        } else {
+            // If not falling, just start the floating animation
+            profileImage.style.top = "0";
+            profileImage.style.animation = "float 2.5s ease-in-out infinite";
+        }
+    }
+    
     function highlightActiveTab() {
         // Only run this for mobile view
         if (window.innerWidth <= 768) {
@@ -595,29 +648,6 @@
     
     // Also run when window is resized (in case user switches between mobile/desktop)
     window.addEventListener('resize', highlightActiveTab);
-    
-    // Show loading animation for 3 seconds before showing content
-    document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(() => {
-            const loader = document.getElementById("loader");
-            const content = document.getElementById("mainContent");
-            
-            // Fade out loader
-            loader.style.opacity = "0";
-            
-            // After fade out completes, hide loader and show content
-            setTimeout(() => {
-                loader.style.display = "none";
-                content.style.display = "block";
-                
-                // Trigger content animations
-                document.body.style.opacity = "1";
-                
-                // Make sure active tab is highlighted after content loads
-                highlightActiveTab();
-            }, 500); // Match this with the loader's transition duration
-        }, 3000); // 3 seconds loading time
-    });
     </script>
 
 </body>
