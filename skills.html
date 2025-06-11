@@ -118,34 +118,81 @@
         transform: scale(1.05);
         border-color: #000;
     }
+
+    @media (max-width: 768px) {
+        .content {
+            margin-top: 1rem;
+            padding-bottom: 90px; /* Adjust this value based on your bottom navbar height */
+        }
+    }
     </style>
 </head>
 <body>
-    <div>
-        <nav class="navbar fixed-top navbar-expand-sm bg-white shadow-sm">
-            <div class="container-fluid">
-                <a class="navbar-brand navigate" href="./index.html"><img class="img-fluid" src="./icon.png" alt="icon" style="height:7vh;border-radius: 10px"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="offcanvas offcanvas-end" id="offcanvasNavbar">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title">MENU</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
-                            <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div id="mainContent">
+    <!-- Regular Top Navbar (hidden on mobile) -->
+    <nav class="navbar fixed-top navbar-expand-md bg-white shadow-sm d-none d-md-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand navigate" href="./index.html"><img class="img-fluid" src="./icon.png" alt="icon" style="height:7vh; border-radius: 10px"></a>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./skills.html">Technical Skills</a></li>
+                    <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./projects.html">Works</a></li>
+                    <li class="nav-item"><a class="nav-link navigate" style="margin-right: 30px;" href="./contact.html">Contact</a></li>
+                </ul>
             </div>
-        </nav>
-    </div>
+        </div>
+    </nav>
+
+    <!-- Bottom Mobile Navbar -->
+    <nav class="navbar fixed-bottom navbar-expand bg-white shadow-sm d-md-none" style="border-top: 1px solid #eee;">
+        <div class="container-fluid">
+            <ul class="navbar-nav w-100 justify-content-around">
+                <li class="nav-item">
+                    <a class="nav-link navigate text-center" href="./index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+                        </svg>
+                        <div class="small">Home</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navigate text-center" href="./resume.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16">
+                            <path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2M9.5 3A1.5 1.5 0 0 0 11 4.5h2v9.255S12 12 8 12s-5 1.755-5 1.755V2a1 1 0 0 1 1-1h5.5z"/>
+                        </svg>
+                        <div class="small">Resume</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navigate text-center" href="./skills.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16">
+                            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+                        </svg>
+                        <div class="small">Skills</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navigate text-center" href="./projects.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+                            <path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5m1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0M1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5"/>
+                        </svg>
+                        <div class="small">Works</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navigate text-center" href="./contact.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                        </svg>
+                        <div class="small">Contact</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="content">
         <div class="container">
             <div class="row">
