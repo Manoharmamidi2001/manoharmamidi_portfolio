@@ -67,6 +67,46 @@
             padding-bottom: 90px; /* Adjust this value based on your bottom navbar height */
         }
     }
+    /* Active tab indicator for desktop */
+.navbar-nav .nav-item.active .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-item.active .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Position below the nav item */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #000000;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Active tab indicator for mobile */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item.active .nav-link {
+        position: relative;
+        background-color: transparent !important;
+    }
+    
+    .navbar-nav .nav-item.active .nav-link::after {
+        bottom: 0;
+        left: 25%; /* Center the border with 25% margin on each side */
+        width: 50%;
+        background-color: #000000; /* White border for contrast on black */
+    }
+    
+    /* Keep your existing mobile highlight for icons/text */
+    .navbar-nav .nav-item.active .nav-link svg {
+        fill: #000000 !important;
+    }
+    
+    .navbar-nav .nav-item.active .nav-link .small {
+        color: #000000 !important;
+    }
+}
   </style>
 </head>
 <body>
@@ -307,24 +347,39 @@
   </div>
   <script>
     function highlightActiveTab() {
-        // Only run this for mobile view
-        if (window.innerWidth <= 768) {
-            // Get current page path
-            const currentPath = window.location.pathname.split('/').pop();
+    // Get current page path
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    
+    // Remove active class from all nav items
+    const navItems = document.querySelectorAll('.navbar-nav .nav-item');
+    navItems.forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Find and highlight the active tab
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath || 
+            (currentPath === '' && linkPath === 'index.html')) {
             
-            // Define page to icon mapping
-            const pageMap = {
-                'index.html': 'bi-house',
-                'resume.html': 'bi-file-earmark-person',
-                'skills.html': 'bi-code-slash',
-                'projects.html': 'bi-briefcase',
-                'contact.html': 'bi-envelope'
-            };
+            // Add active class to parent li
+            link.closest('.nav-item').classList.add('active');
             
-            // Reset all tabs to default state
-            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-            navLinks.forEach(link => {
-                link.style.backgroundColor = 'transparent';
+            // Mobile specific styling (icons and text)
+            if (window.innerWidth <= 768) {
+                const icon = link.querySelector('svg');
+                if (icon) {
+                    icon.style.fill = '#ffffff';
+                }
+                const text = link.querySelector('.small');
+                if (text) {
+                    text.style.color = '#ffffff';
+                }
+            }
+        } else {
+            // Reset other links (for mobile)
+            if (window.innerWidth <= 768) {
                 const icon = link.querySelector('svg');
                 if (icon) {
                     icon.style.fill = 'currentColor';
@@ -333,31 +388,10 @@
                 if (text) {
                     text.style.color = '';
                 }
-            });
-            
-            // Find and highlight the active tab
-            navLinks.forEach(link => {
-                const linkPath = link.getAttribute('href').split('/').pop();
-                if (linkPath === currentPath || 
-                    (currentPath === '' && linkPath === 'index.html')) {
-                    
-                    // Set background to black
-                    link.style.backgroundColor = '#000000';
-                    link.style.borderRadius = '10px';
-                    
-                    // Set icon and text to white
-                    const icon = link.querySelector('svg');
-                    if (icon) {
-                        icon.style.fill = '#ffffff';
-                    }
-                    const text = link.querySelector('.small');
-                    if (text) {
-                        text.style.color = '#ffffff';
-                    }
-                }
-            });
+            }
         }
-    }
+    });
+}
 
     // Run on page load
     document.addEventListener("DOMContentLoaded", highlightActiveTab);
